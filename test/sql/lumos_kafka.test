@@ -1,0 +1,23 @@
+# name: test/sql/lumos_kafka.test
+# description: test lumos_kafka extension
+# group: [sql]
+
+# Before we load the extension, this will fail
+statement error
+SELECT lumos_kafka('Sam');
+----
+Catalog Error: Scalar Function with name lumos_kafka does not exist!
+
+# Require statement will ensure this test is run with this extension loaded
+require lumos_kafka
+
+# Confirm the extension works
+query I
+SELECT lumos_kafka('Sam');
+----
+LumosKafka Sam 🐥
+
+query I
+SELECT lumos_kafka_openssl_version('Michael') ILIKE 'LumosKafka Michael, my linked OpenSSL version is OpenSSL%';
+----
+true
