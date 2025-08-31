@@ -99,3 +99,7 @@ After running these steps, you can install and load your extension using the reg
 INSTALL lumos_kafka
 LOAD lumos_kafka
 ```
+
+## Acknowledgement
+
+Thanks to DuckDB and libRdkafka for their foundational support. Special thanks to [Tributary](https://github.com/Query-farm/tributary.git) for inspiring the idea of this work.
